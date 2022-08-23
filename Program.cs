@@ -17,16 +17,7 @@ builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<IMemberService, MemberService>();
 builder.Services.AddScoped<MemberWelcomeNotification>();
 builder.Services.AddScoped<MemberLoginNotification>();
-//builder.Services.BuildServiceProvider().GetRequiredService<IMemberService>();
-//var n = new ContainerBuilder();
-//n.RegisterAssemblyTypes(System.Reflection.Assembly.GetExecutingAssembly())
-//    .Where(w => w.Name.EndsWith("Service"))
-//    .AsImplementedInterfaces();
 
-//n.RegisterAssemblyTypes(System.Reflection.Assembly.GetExecutingAssembly())
-//    .Where(w => w.Name.EndsWith("Notification"))
-//    .InstancePerLifetimeScope();
-//builder.Services.AddScoped<IMemberService, MemberService>();
 builder.Services.Configure<MailSetting>(builder.Configuration.GetSection("EmailSettings"));
 
 var app = builder.Build();
